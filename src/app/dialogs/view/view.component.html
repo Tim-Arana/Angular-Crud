@@ -1,0 +1,26 @@
+<div class="container">
+      <!-- ID -->
+      <p mat-dialog-title> ID: {{data.id}} </p> 
+        <h2>User Information</h2>
+    <div mat-dialog-content>
+      <!-- Name -->
+      <b>Name:</b> {{data.name}}
+      <br>
+      <br>
+      <!-- Email -->
+      <b>Email:</b> {{data.email}}
+      <br>
+      <br>
+      <!-- Contact-->
+      <b>Contact:</b> {{data.phone}}
+      <br>
+      <br>
+      <!-- Website -->
+      <b>Website:</b> {{data.website}}
+      <br>
+      <br>
+    </div>
+  
+    <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1">Close</button>
+  </div>
+  

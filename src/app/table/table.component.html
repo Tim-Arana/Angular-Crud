@@ -1,0 +1,83 @@
+<div class="container mat-elevation-z8">
+  
+    <div class="form">
+      <mat-form-field floatPlaceholder="never" color="accent">
+        <input matInput #filter placeholder="Search an item">
+      </mat-form-field>
+      <button mat-icon-button (click)="refresh()"><mat-icon>refresh</mat-icon></button>
+    </div>
+  
+    <mat-table #table [dataSource]="dataSource" matSort class="mat-cell">
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+        <mat-cell *matCellDef="let row" >{{row.id}}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.name}}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.email}}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="contact">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Contact</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.phone}}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="website">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Website</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.website}}</mat-cell>
+      </ng-container>
+  
+      <!-- actions -->
+      <!-- Add -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>
+          <button mat-raised-button matTooltip="Add New Item" aria-label="Add New Item" color="primary" (click)="addNew()">
+            <mat-icon aria-label="Example icon-button">add</mat-icon>
+            Add Item
+          </button>
+          
+        </mat-header-cell>
+  
+        <mat-cell *matCellDef="let row; let i=index;">
+          <!-- view -->
+          <button mat-button color="primary" matTooltip="View Item" aria-label="View Item" (click)="viewItem(i, row.id, row.name, row.email, row.phone, row.website)">
+            view 
+          </button>
+  
+          <!-- Edit -->
+          <button mat-icon-button color="primary" matTooltip="Edit Item" aria-label="Edit Item" (click)="startEdit(i, row.id, row.name, row.email, row.phone, row.website)">
+            <mat-icon aria-label="Edit">edit</mat-icon>
+          </button>
+          
+          <!-- Delete -->
+          <button mat-icon-button color="warn" matTooltip="Delete Item" aria-label="Delete Item" (click)="deleteItem(i, row.id, row.name, row.email, row.phone)">
+            <mat-icon aria-label="Delete">delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  
+  
+    <div class="no-results" [style.display]="dataSource.renderedData.length == 0 ? '' : 'none'">
+      No results
+    </div>
+  
+    <mat-paginator #paginator
+                   [length]="dataSource.filteredData.length"
+                   [pageIndex]="0"
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator>
+  </div>
+  

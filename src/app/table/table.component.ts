@@ -1,25 +1,24 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {DataService} from './services/data.service';
+import { Component, OnInit ,ElementRef, ViewChild} from '@angular/core';
+import {DataService} from '../services/data.service';
 import {HttpClient} from '@angular/common/http';
 import {MatDialog} from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
-import {Data} from './models/data';
+import {Data} from '../models/data';
 import {DataSource} from '@angular/cdk/collections';
-import {AddDialogComponent} from './dialogs/add/add.dialog.component';
-import {EditDialogComponent} from './dialogs/edit/edit.dialog.component';
-import {DeleteDialogComponent} from './dialogs/delete/delete.dialog.component';
-import { ViewComponent } from './dialogs/view/view.component';
+import {AddDialogComponent} from '../dialogs/add/add.dialog.component';
+import {EditDialogComponent} from '../dialogs/edit/edit.dialog.component';
+import {DeleteDialogComponent} from '../dialogs/delete/delete.dialog.component';
+import { ViewComponent } from '../dialogs/view/view.component';
 import {BehaviorSubject, fromEvent, merge, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-table',
+  templateUrl: './table.component.html',
+  styleUrls: ['./table.component.css']
 })
-
-export class AppComponent implements OnInit {
+export class TableComponent implements OnInit {
   displayedColumns = ['id', 'name', 'email', 'contact', 'website', 'actions'];
   exampleDatabase: DataService | null;
   dataSource: ExampleDataSource | null;
@@ -181,7 +180,6 @@ export class ExampleDataSource extends DataSource<Data> {
   disconnect() {}
 
 
-  
   /** Returns a sorted copy of the database data. */
   sortData(data: Data[]): Data[] {
     if (!this._sort.active || this._sort.direction === '') {
