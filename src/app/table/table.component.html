@@ -58,7 +58,7 @@
           </button>
           
           <!-- Delete -->
-          <button mat-icon-button color="warn" matTooltip="Delete Item" aria-label="Delete Item" (click)="deleteItem(i, row.id, row.name, row.email, row.phone)">
+          <button mat-icon-button color="warn" matTooltip="Delete Item" aria-label="Delete Item" (click)="deleteItem(i, row.id, row.name, row.email, row.phone, row.website)">
             <mat-icon aria-label="Delete">delete</mat-icon>
           </button>
         </mat-cell>
@@ -76,7 +76,7 @@
     <mat-paginator #paginator
                    [length]="dataSource.filteredData.length"
                    [pageIndex]="0"
-                   [pageSize]="10"
+                   [pageSize]="15"
                    [pageSizeOptions]="[5, 10, 25, 100]">
     </mat-paginator>
   </div>
