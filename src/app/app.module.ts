@@ -23,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { TableComponent } from './table/table.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { TableComponent } from './table/table.component';
     DeleteDialogComponent,
     ViewComponent,
     ErrorpageComponent,
-    TableComponent
+    TableComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

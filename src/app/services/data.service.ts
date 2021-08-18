@@ -6,7 +6,7 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 @Injectable()
 export class DataService {
   // firebase with json
-  private  API_URL = 'https://assessment-61abf-default-rtdb.asia-southeast1.firebasedatabase.app/.json';
+  private  API_URL = 'https://jsonplaceholder.typicode.com/users';
 
   dataChange: BehaviorSubject<Data[]> = new BehaviorSubject<Data[]>([]);
   // Temporarily stores data from dialogs

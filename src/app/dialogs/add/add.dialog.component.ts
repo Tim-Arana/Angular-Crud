@@ -37,7 +37,7 @@ export class AddDialogComponent {
 
   public confirmAdd(): void {
     this.dataService.addIssue(this.data);
-    this.dataService.addItem(this.data)
+    //this.dataService.addItem(this.data)
   }
   
 }
