@@ -77,11 +77,11 @@ export class TableComponent implements OnInit {
     });
   }
 
-  deleteItem(i: number, id: number, name: string, email: string, phone: number, website: string) {
+  deleteItem(i: number, id: number, name: string, email: string, phone: number) {
     this.index = i;
     this.id = id;
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
-      data: {id: id, name: name, email: email, phone: phone, website:website}
+      data: {id: id, name: name, email: email, phone: phone}
     });
 
     dialogRef.afterClosed().subscribe(result => {

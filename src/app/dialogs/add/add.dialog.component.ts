@@ -19,7 +19,7 @@ export class AddDialogComponent {
 
   formControl = new FormControl('', [
     Validators.required
-    // Validators.email,
+    //Validators.email,
   ]);
 
   getErrorMessage() {

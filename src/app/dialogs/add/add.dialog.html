@@ -6,7 +6,7 @@
     <!-- id -->
     <div class="form">
       <mat-form-field color="accent">
-        <input matInput #input class="form-control" type="number" placeholder="Id" [(ngModel)]="data.id" name="id" required >
+        <input matInput #input class="form-control" placeholder="Id" type="number" [(ngModel)]="data.id" name="id" required >
         <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
     </div>
@@ -22,7 +22,7 @@
     <!--email-->
     <div class="form">
       <mat-form-field color="accent">
-        <input matInput #inputstate class="form-control" type="email" placeholder="Email" [(ngModel)]="data.email" ngModel [email]="true" name="email" required >
+        <input matInput #inputstate class="form-control" type="email" placeholder="Email" [(ngModel)]="data.email" name="email" required >
         <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
     </div>

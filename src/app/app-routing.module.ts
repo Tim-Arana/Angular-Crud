@@ -7,11 +7,11 @@ import { DeleteDialogComponent } from './dialogs/delete/delete.dialog.component'
 import { ViewComponent } from './dialogs/view/view.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { TableComponent } from './table/table.component';
-import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
+  {path: '', component:TableComponent },
   {path: 'Home', component:TableComponent },
-  {path: 'About', component:AboutComponent },
+  {path: 'Add', component:AddDialogComponent },
   {path: '404', component:ErrorpageComponent},
   {path: '**', redirectTo:'/404'}
 

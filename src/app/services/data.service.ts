@@ -5,7 +5,7 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
 @Injectable()
 export class DataService {
-  // firebase with json
+  // Url
   private  API_URL = 'https://jsonplaceholder.typicode.com/users';
 
   dataChange: BehaviorSubject<Data[]> = new BehaviorSubject<Data[]>([]);
